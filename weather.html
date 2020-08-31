@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./weather.css" />
+    <link rel="javascript" href="./weather.js" />
+    <script src="./weather.json"></script>
+  </head>
+  <body>
+    <div class="widget">
+      <div class="today">
+        <div class="today-icon"></div>
+        <div class="city-a">
+          <p id="city"></p>
+          <p>15&deg;</p>
+          <p>HI: <strong>30&deg;</strong></p>
+          <p>LOW: <strong>27&deg;</strong></p>
+        </div>
+        <div class="details">
+          <h4>Today - 31 JANUARY 2019</h4>
+          <p>PRECIP: 90%</p>
+          <p>HUMIDITY: 82%</p>
+          <p>WINDS: NW 21 KPH</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      var jsoonString = localStorage.getItem("weatherObj");
+      var data = JSON.parse(jsonString);
+      var cityName = data.city.name;
+      document.getElementById("city") = cityName;
+    </script>
+  </body>
+</html>
